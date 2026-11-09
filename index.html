@@ -1,0 +1,132 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ficha — Ordem Paranormal II</title><meta name="theme-color" content="#0a0a14">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a14;--p:#15152b;--l:#2b2b4d;--a:#c4352a;--t:#ece9f5;--m:#8f8da8;--ok:#4caf7a}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(color-mix(in srgb,var(--a) 16%,#14142a),var(--bg));color:var(--t);font:14px Inter,system-ui,sans-serif;min-height:100vh}
+#app{display:grid;grid-template-columns:300px 1fr 340px;gap:14px;padding:14px;max-width:1500px;margin:auto;align-items:start}
+@media(max-width:1000px){#app{grid-template-columns:1fr}}
+.box{background:var(--p);border:1px solid var(--l);border-radius:12px;padding:14px;margin-bottom:14px}
+h3,.f{font-family:Cinzel,Georgia,serif;letter-spacing:.03em}h3{margin:0 0 10px;font-size:16px;color:var(--a);display:flex;justify-content:space-between}
+input,select,textarea,button{font:inherit;color:var(--t);background:#0d0d1e;border:1px solid var(--l);border-radius:8px;padding:6px 8px;min-width:0}
+input,select,textarea{width:100%}textarea{min-height:90px;resize:vertical}
+button{cursor:pointer}button:hover,input:focus,select:focus,textarea:focus{border-color:var(--a);outline:0}.pr{background:var(--a);border-color:var(--a);font-weight:600}
+.row{display:flex;gap:8px;align-items:center}.g{display:grid;gap:10px}.c3{grid-template-columns:repeat(3,1fr)}.c4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:600px){.c4{grid-template-columns:1fr 1fr}}
+label{display:block;font-size:12px;color:var(--m)}
+.tabs{display:flex;gap:6px;margin-bottom:12px}.tabs button{flex:1;font:800 14px Cinzel,serif}.tabs .on{background:var(--a);border-color:var(--a)}
+.ph{width:84px;height:84px;border:1px dashed var(--l);border-radius:12px;display:grid;place-items:center;overflow:hidden;cursor:pointer;flex:none;font-size:28px}.ph img{width:100%;height:100%;object-fit:cover}
+.nm{font:800 22px Cinzel,serif}
+.vt{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:12px}.vt input{width:58px;text-align:center}.vt b{display:flex;gap:6px;width:100%;font-family:Cinzel,serif}
+.bar{height:10px;background:#0d0d1e;border-radius:6px;overflow:hidden;flex:1 1 100%}.bar i{display:block;height:100%;transition:width .2s}
+.pip{width:22px;height:22px;border:2px solid var(--a);transform:rotate(45deg);cursor:pointer;margin:0 8px}.pip.on{background:var(--a)}
+.card{background:#0d0d1e;border:1px solid var(--l);border-radius:10px;padding:10px;margin-bottom:10px;display:grid;gap:8px}
+.at{text-align:center;display:grid;gap:6px}.die{font:800 44px Cinzel,serif;color:var(--a)}
+.tw{overflow-x:auto}table{width:100%;border-collapse:collapse}td{padding:4px}tr{border-top:1px solid var(--l)}td select,td input{padding:4px}.qt{width:62px}.mini{width:auto;padding:2px 8px;font-size:11px}
+.lg{border-left:4px solid var(--m);padding:6px 10px;margin-bottom:8px;background:#0d0d1e;border-radius:6px}.lg.ok{border-color:var(--ok)}.lg.no{border-color:var(--a)}
+.dc{font-style:normal;background:var(--l);padding:1px 6px;border-radius:6px;margin-right:4px}.tot{font:800 22px Cinzel,serif}.w{color:#f5b041;display:block}.m{color:var(--m)}
+.dv{vertical-align:middle;margin:0 1px}.dv *{fill:#2b2b4d;stroke:var(--a);stroke-width:1.6;stroke-linejoin:round}.dv text{fill:#fff;stroke:none;font:700 9px Inter,sans-serif}.big .dv{filter:drop-shadow(0 0 8px var(--a))}
+.dg{background:var(--a);border-color:var(--a)}.pr:hover{filter:brightness(1.15)}tr:hover{background:#1b1b38}:focus-visible{outline:2px solid var(--a)}
+.c2{grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}@media(max-width:1000px){input,select,textarea{font-size:16px}button{min-height:38px}.tw table{min-width:540px}}#R{align-self:stretch}#R .box{position:sticky;top:14px}
+header{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:center;padding:14px 14px 0;max-width:1500px;margin:auto}header h1{margin:0;font:800 22px Cinzel,serif}header span{color:var(--a)}
+#fl{position:fixed;left:50%;bottom:16px;transform:translate(-50%,30px);opacity:0;pointer-events:none;transition:.25s;background:var(--p);border:1px solid var(--a);border-radius:12px;padding:10px 16px;z-index:9;max-width:92vw;box-shadow:0 8px 30px #000a}#fl.on{opacity:1;transform:translate(-50%,0)}#fl .lg{margin:0}
+#tu{position:fixed;inset:0;background:#000d;z-index:20;display:grid;place-items:center;padding:14px}#tu:empty{display:none}#tu .box{max-width:560px;width:100%;margin:0;max-height:92vh;overflow:auto;line-height:1.55}
+</style></head><body><header><h1>Ordem <span>Paranormal</span> II · Ficha</h1><div class="row"><button data-a="tut">? Tutorial</button><button data-a="exp" title="Baixa um arquivo .json de backup">Exportar</button><button data-a="fi" title="Carrega uma ficha exportada">Importar</button><button data-a="rst">Nova ficha</button></div></header><div id="app"><div id="L"></div><div id="C"></div><div id="R"></div></div>
+<input type="file" id="fi" accept=".json" hidden><div id="tu"></div><div id="fl"></div>
+<script>
+const $=s=>document.querySelector(s),D=[4,6,8,10,12,20],AT={F:'Físico',M:'Mente',E:'Emoção'};
+const TRN=[[4,'Destreinado'],[6,'Treinado'],[8,'Especialista'],[10,'Mestre'],[12,'Grão Mestre']];
+const SK=[['Acrobacia','F'],['Aptidão','M'],['Atletismo','F'],['Crime','F'],['Disciplina','E'],['Enganação','E'],['Furtividade','F'],['Intimidação','E'],['Intuição','E'],['Luta','F'],['Máquinas','M'],['Medicina','M'],['Ocultismo','M'],['Percepção','M'],['Persuasão','E'],['Pesquisa','M'],['Pontaria','F'],['Sobrevivência','M'],['Tecnologia','M'],['Vigor','F']];
+const PF={Executor:'Age primeiro e pensa depois. Se não der certo, tenta de novo até conseguir.',Analista:'Observa, entende e se prepara para só então agir, com a maior precisão possível.',Vigilante:'Sempre atento, aproveita brechas para agir primeiro e decide bem sob pressão.'};
+const FC=['Vexame: descreva a ação de forma vergonhosa','Machucado: Físico −1 passo até o fim da cena','Desatenção: Mente −1 passo até o fim da cena','Irritação: Emoção −1 passo até o fim da cena','Acidente: perde 1d4 PV','Frustração: perde 1d4 PD','Perda: um item se perde','Nenhum efeito adicional'];
+const NEW={bars:()=>({n:'Nova barra',c:5,m:5}),hab:()=>({n:'Nova habilidade',d:''}),it:()=>({n:'',q:1,w:'',per:'Luta',bn:0,mc:0,mm:0,nt:''})};
+const init=()=>({tut:0,pav:0,pavd:4,nome:'',ocup:'',idade:'',perfil:'Executor',nivel:1,foto:'',attr:{F:6,M:6,E:6},pv:[10,10],pd:[10,10],arm:0,imp:0,
+sk:SK.map(([n,a])=>({n,a,d:4,x:'',ex:0})),bars:[],it:[],
+hab:[{n:'Ímpeto (Executor)',d:'Barra de 3 espaços. Ao falhar num teste, preenche 1 espaço. Apague 1 para +d4 num teste, ou 3 para aumentar um atributo em 1 passo até o fim da cena.'},{n:'Habilidade de ocupação',d:'Descreva aqui.'}],hist:'',notas:''});
+const save=()=>{try{localStorage.setItem('op2ficha',JSON.stringify(S))}catch(e){}};
+const load=()=>{try{return Object.assign(init(),JSON.parse(localStorage.getItem('op2ficha')))}catch(e){return init()}};
+let S=load(),T={c:'e',r:'i'},LOG=[],R={dt:7,ps:0,ex:0};
+const esc=s=>String(s??'').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
+const I=(p,v,x='')=>`<input data-p="${p}" value="${esc(v)}" ${x}>`;
+const N=(p,v,x='')=>`<input type="number" data-n data-p="${p}" value="${v}" ${x}>`;
+const SEL=(p,o,v,n=1)=>`<select data-p="${p}" ${n?'data-n':''}>${o.map(([a,b])=>`<option value="${a}" ${a==v?'selected':''}>${b}</option>`).join('')}</select>`;
+const TA=(p,v,ph='')=>`<textarea data-p="${p}" placeholder="${ph}">${esc(v)}</textarea>`;
+const B=(c,m,col)=>`<div class="bar"><i style="width:${Math.max(0,Math.min(100,m>0?c/m*100:0))}%;background:${col}"></i></div>`;
+const DD=D.map(d=>[d,'d'+d]),cl=(v,m)=>Math.max(0,Math.min(m,v));
+const SH={4:'12,3 22,21 2,21',8:'12,2 22,12 12,22 2,12',10:'12,1 22,10 12,23 2,10',12:'12,2 21.5,9 18,21 6,21 2.5,9',20:'12,2 21,7 21,17 12,22 3,17 3,7'};
+const dv=(d,t=d,z=26)=>`<svg class="dv" viewBox="0 0 24 24" width="${z}" height="${z}"><title>d${d}</title>${d==6?'<rect x="3" y="3" width="18" height="18" rx="3"/>':`<polygon points="${SH[d]}"/>`}<text x="12" y="${d==4?18:15}" text-anchor="middle">${t}</text></svg>`;
+let FT,PEND='',TU=S.tut?-1:0;const fl=h=>{const e=$('#fl');e.innerHTML=h;e.classList.add('on');clearTimeout(FT);FT=setTimeout(()=>e.classList.remove('on'),5000)};
+const X=(k,i)=>`<button class="${PEND==k+i?'dg':''}" data-a="del" data-k="${k}" data-i="${i}">${PEND==k+i?'Remover?':'✕'}</button>`;
+const TUT=[['Bem-vindo, sobrevivente','Esta ficha segue o playtest de Ordem Paranormal RPG II: você começa como uma pessoa comum, prestes a ter o primeiro contato com o paranormal. Este guia mostra como preencher cada campo. Se o mestre entregou uma ficha pronta, copie os valores dela. A ficha salva sozinha neste navegador; use Exportar e Importar (no topo) para fazer backup ou levar a ficha para outro aparelho.'],
+['1. Nome, ocupação e nível','Nome e ocupação são livres. A ocupação é o que o personagem faz da vida e fornece uma habilidade. O nível mede experiência e competência geral, de 1 a 10. No Ato I do playtest, os personagens são de nível 2.'],
+['2. Perfil','O perfil define seu estilo de jogo, não o que você sabe fazer. Executor age primeiro e pensa depois, e tira força dos fracassos (usa a barra de Ímpeto). Analista observa e se prepara, agindo com precisão. Vigilante é atento, aproveita brechas para agir primeiro e decide bem sob pressão. Nenhum perfil é melhor que outro. A cor da ficha muda conforme o perfil: vermelho para executor, azul para analista e verde para vigilante.'],
+['3. Atributos','São três: Físico (corpo), Mente (raciocínio e percepção) e Emoção (vontade e instintos). Cada um é um dado: d4 abaixo da média, d6 média humana, d8 acima da média, d10 muito acima, d12 ápice humano. Exemplo: Alan tem Físico d6, Mente d8 e Emoção d8.'],
+['4. Perícias','São 20, cada uma com um atributo-base (já preenchido; o mestre pode autorizar outro). O treino também é um dado: d4 destreinado, d6 treinado, d8 especialista, d10 mestre, d12 grão mestre. Em Aptidão, escreva o campo de conhecimento: artes, atualidades, burocracia, exatas, humanas ou tática.'],
+['5. PV e PD','Pontos de Vida medem a resistência física e Pontos de Determinação, a mental. Ferimentos tiram PV, traumas tiram PD, e algumas habilidades também gastam. Chegar a 0 em qualquer um traz problemas graves, e na regra simplificada do playtest você pode morrer. Use o máximo da sua ficha pronta (Alan: PV 10 e PD 16).'],
+['6. Habilidades e itens','Você começa com 2 habilidades: uma do perfil e outra da ocupação. Anote-as e seus equipamentos na aba Habilidades e Itens. Armas têm perícia de ataque, bônus de dano e munição.'],
+['7. Testes','Um teste soma o dado do atributo com o dado da perícia e compara com a DT (7 no playtest). Dois ou mais dados iguais com valor 6 ou mais são sucesso crítico; todos os dados em 1 são falha crítica. Passos sobem ou descem o tipo do dado (d4 < d6 < d8 < d10 < d12). Clique em uma perícia ou atributo para rolar. Se o Dado de Pavor (abaixo da armadura) estiver ativo, ele entra automaticamente em todas as rolagens.']];
+const tut=()=>{const e=$('#tu');if(TU<0){e.innerHTML='';return}const[t,x]=TUT[TU];e.innerHTML=`<div class="box"><h3>${t}<small class="m">${TU+1}/${TUT.length}</small></h3><p>${x}</p><div class="row"><button data-a="tx">Pular</button><span style="flex:1"></span>${TU?'<button data-a="tn" data-v="-1">Voltar</button>':''}<button class="pr" data-a="tn" data-v="1">${TU==TUT.length-1?'Começar a montar':'Próximo'}</button></div></div>`};
+const pvd=(z=18)=>S.pav?'+'+dv(S.pavd||4,S.pavd||4,z):'';
+const rd=d=>1+Math.floor(Math.random()*d),st=(d,n)=>d>12?d:D[Math.max(0,Math.min(4,D.indexOf(d)+n))];
+function roll(t,dd,b=0){let ds=[...dd];if(R.ex)ds.push(+R.ex);if(S.pav)ds.push(S.pavd||4);ds=ds.slice(0,4);
+const v=ds.map(rd),sum=[...v].sort((a,c)=>c-a).slice(0,3).reduce((a,c)=>a+c,0)+b,
+crit=v.some((x,i)=>x>=6&&v.indexOf(x)!=i),fcrit=v.length>1&&v.every(x=>x==1),ok=!fcrit&&(crit||sum>=R.dt),
+l={t,ds,v,b,sum,ok,crit,fcrit,dt:R.dt,ra:Math.max(...v),rb:Math.min(...v),fx:fcrit?FC[rd(8)-1]:''};
+R.ex=0;R.ps=0;if(!ok&&S.perfil=='Executor'&&S.imp<3)S.imp++;LOG.unshift(l);fl(lg(l));return l}
+const vit=(l,k,c)=>`<div class="vt"><b>${l}</b><button data-a="adj" data-k="${k}" data-v="-1">−</button>${N(k+'.0',S[k][0])}/${N(k+'.1',S[k][1])}<button data-a="adj" data-k="${k}" data-v="1">+</button>${B(S[k][0],S[k][1],c)}</div>`;
+const left=()=>`<div class="box"><div class="row"><label class="ph">${S.foto?`<img src="${S.foto}">`:'＋'}<input type="file" id="ph" accept="image/*" hidden></label>${I('nome',S.nome,'placeholder="Nome do personagem" class="nm"')}</div></div>
+<div class="box"><h3>Status</h3>${vit('Vida (PV)','pv','#c4352a')}${vit('Determinação (PD)','pd','#3b82f6')}
+<div class="row"><label style="flex:1">Armadura</label>${N('arm',S.arm,'style="width:70px"')}</div>
+<div class="row" style="margin-top:10px" title="Quando ativo, o dado de pavor é somado automaticamente em todas as rolagens (máx. 4 dados por teste; somam os 3 maiores)."><label style="flex:1">Dado de Pavor</label>${S.pav?dv(S.pavd||4,S.pavd||4,26):''}<span style="width:72px">${SEL('pavd',DD.slice(0,5),S.pavd||4)}</span><button class="${S.pav?'pr':''}" data-a="pav">${S.pav?'Ativo':'Inativo'}</button></div>
+${S.perfil=='Executor'?`<div class="vt" style="margin-top:12px"><b>Ímpeto</b>${[0,1,2].map(n=>`<span class="pip ${S.imp>n?'on':''}" data-a="pip" data-v="${n}"></span>`).join('')}<button data-a="imp1">+d4 no próximo teste (−1)</button></div>`:''}
+${S.pv[0]<1?'<span class="w">PV 0: teste de Vigor (DT 7, +3 por teste já feito) ou morre.</span>':''}${S.pd[0]<1?'<span class="w">PD 0: teste de Disciplina (DT 7, +3 por teste já feito) ou colapso mental.</span>':''}</div>
+<div class="box"><h3>Barras personalizadas</h3>${S.bars.map((b,i)=>`<div class="vt"><b>${I(`bars.${i}.n`,b.n)}${X('bars',i)}</b><button data-a="bar" data-i="${i}" data-v="-1">−</button>${N(`bars.${i}.c`,b.c)}/${N(`bars.${i}.m`,b.m)}<button data-a="bar" data-i="${i}" data-v="1">+</button>${B(b.c,b.m,'var(--a)')}</div>`).join('')}<button data-a="add" data-k="bars">＋ Barra (munição, foco…)</button></div>`;
+const tabs=(k,l)=>`<div class="tabs">${l.map(([v,t])=>`<button class="${T[k]==v?'on':''}" data-a="tab" data-k="${k}" data-v="${v}">${t}</button>`).join('')}</div>`;
+const est=()=>`<div class="box g c4"><label>Idade${I('idade',S.idade)}</label><label>Ocupação${I('ocup',S.ocup)}</label><label>Perfil${SEL('perfil',Object.keys(PF).map(k=>[k,k]),S.perfil,0)}</label><label>Nível${N('nivel',S.nivel,'min=1 max=10')}</label></div>
+<p class="m">${PF[S.perfil]}</p>
+<div class="g c3">${['F','M','E'].map(k=>`<div class="box at"><b class="f">${AT[k]}</b><div class="big">${dv(S.attr[k],S.attr[k],64)}</div>${SEL('attr.'+k,DD,S.attr[k])}<button class="pr" data-a="rat" data-k="${k}">Rolar ${dv(S.attr[k],S.attr[k],18)}${pvd()}</button></div>`).join('')}</div>
+<div class="box"><h3>Configurar teste</h3><div class="g c3"><label>DT${N('R.dt',R.dt)}</label><label>Passos (± no dado da perícia)${N('R.ps',R.ps,'min=-4 max=4')}</label><label>Dado extra${SEL('R.ex',[[0,'Nenhum'],[4,'d4'],[6,'d6'],[8,'d8'],[10,'d10'],[12,'d12']],R.ex)}</label></div><p class="m">Passos e dado extra zeram após cada rolagem. ${S.pav?`Dado de Pavor ${dv(S.pavd||4,S.pavd||4,18)} ativo: entra automaticamente em todas as rolagens.`:'Dado de Pavor inativo: não entra nas rolagens.'}</p></div>
+<div class="box"><h3>Perícias</h3><div class="tw"><table><tr class="m"><td>Perícia</td><td>Treino</td><td>Atrib.</td><td>Extra</td><td></td></tr>${S.sk.map((s,i)=>`<tr><td>${s.n}${s.n=='Aptidão'?I(`sk.${i}.x`,s.x,'placeholder="campo" class="mini" style="width:90px"'):''}</td><td>${SEL(`sk.${i}.d`,TRN,s.d)}</td><td>${SEL(`sk.${i}.a`,Object.entries(AT),s.a,0)}</td><td>${N(`sk.${i}.ex`,s.ex,'class="qt"')}</td><td><button class="pr" data-a="roll" data-i="${i}">${dv(S.attr[s.a],S.attr[s.a],20)}+${dv(st(s.d,R.ps),st(s.d,R.ps),20)}${pvd(20)}</button></td></tr>`).join('')}</table></div></div>`;
+const notas=()=>`<div class="box"><h3>História</h3>${TA('hist',S.hist,'Histórico, memórias, relações…')}</div><div class="box"><h3>Anotações</h3>${TA('notas',S.notas,'Pistas, teorias, lembretes…')}</div>`;
+const lg=l=>`<div class="lg ${l.ok?'ok':'no'}"><b>${esc(l.t)}</b> ${l.v.map((x,i)=>dv(l.ds[i],x)).join('')}${l.b?(l.b>0?' +':' ')+l.b:''}<div class="tot">${l.sum} ${l.ok?'✔':'✘'} <small class="m">DT ${l.dt} · RA ${l.ra} / RB ${l.rb}</small></div>${l.crit?'<span class="w">SUCESSO CRÍTICO: ganha uma informação extra</span>':''}${l.fcrit?'<span class="w">FALHA CRÍTICA — '+l.fx+'</span>':''}${l.dn!=null?`<small>Dano se acertar: <b>${l.dn}</b></small>`:''}</div>`;
+const logh=()=>`<div class="box"><h3>Rolagens<button class="mini" data-a="clr">limpar</button></h3>${LOG.slice(0,8).map(lg).join('')||'<p class="m">Clique em uma perícia ou em Atacar para rolar.</p>'}</div>`;
+const itens=()=>S.it.map((x,i)=>{const w=x.w=='1';return `<div class="card"><div class="row">${I(`it.${i}.n`,x.n,'placeholder="Nome"')}${N(`it.${i}.q`,x.q,'class="qt" title="Quantidade"')}${X('it',i)}</div>
+<div class="row">${SEL(`it.${i}.w`,[['','Item'],['1','Arma']],x.w,0)}${w?SEL(`it.${i}.per`,[['Luta','Luta'],['Pontaria','Pontaria']],x.per,0)+N(`it.${i}.bn`,x.bn,'class="qt" title="Bônus de dano"'):''}</div>
+${w?`<div class="vt"><b>Munição (0 no máximo = sem munição)</b><button data-a="mun" data-i="${i}" data-v="-1">−</button>${N(`it.${i}.mc`,x.mc)}/${N(`it.${i}.mm`,x.mm)}<button data-a="mun" data-i="${i}" data-v="1">+</button>${B(x.mc,x.mm,'#f5b041')}</div><button class="pr" data-a="atk" data-i="${i}">Atacar (dano = RA + bônus)</button>`:''}
+${TA(`it.${i}.nt`,x.nt,'Notas, alcance, peso…')}</div>`}).join('')+`<button data-a="add" data-k="it">＋ Item / Arma</button>`;
+const habs=()=>S.hab.map((h,i)=>`<div class="card"><div class="row">${I(`hab.${i}.n`,h.n)}${X('hab',i)}</div>${TA(`hab.${i}.d`,h.d,'Descrição, custo, efeito…')}</div>`).join('')+`<button data-a="add" data-k="hab">＋ Habilidade</button>`;
+const COR={Executor:'#c4352a',Analista:'#2f7fd6',Vigilante:'#3a9d4f'};
+const hi=()=>`<div class="g c2"><div class="box"><h3>Habilidades</h3>${habs()}</div><div class="box"><h3>Itens e armas</h3>${itens()}</div></div>`;
+function render(){document.documentElement.style.setProperty('--a',COR[S.perfil]||COR.Executor);$('#L').innerHTML=left();
+$('#C').innerHTML=tabs('c',[['e','Estatísticas'],['h','Habilidades e Itens'],['n','Notas']])+({e:est,h:hi,n:notas}[T.c])();
+$('#R').innerHTML=logh();tut()}
+const setP=(p,v)=>{const r=p.startsWith('R.');let o=r?R:S;const k=(r?p.slice(2):p).split('.');k.slice(0,-1).forEach(x=>o=o[x]);o[k.at(-1)]=v};
+const val=t=>t.dataset.n!==undefined?+t.value:t.value;
+document.addEventListener('input',e=>{const p=e.target.dataset.p;if(p){setP(p,val(e.target));save()}});
+document.addEventListener('change',e=>{const t=e.target;
+if(t.id=='ph'&&t.files[0]){const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const c=document.createElement('canvas');c.width=c.height=240;const s=Math.min(im.width,im.height);c.getContext('2d').drawImage(im,(im.width-s)/2,(im.height-s)/2,s,s,0,0,240,240);S.foto=c.toDataURL('image/jpeg',.8);save();render()};im.src=r.result};r.readAsDataURL(t.files[0]);return}
+if(t.id=='fi'&&t.files[0]){const r=new FileReader();r.onload=()=>{try{S=Object.assign(init(),JSON.parse(r.result));save();render()}catch(x){fl('Arquivo inválido.')}};r.readAsText(t.files[0]);return}
+if(t.dataset.p){setP(t.dataset.p,val(t));save();render()}});
+document.addEventListener('click',e=>{const b=e.target.closest('[data-a]');if(!b)return;const{a,k,v,i}=b.dataset,was=PEND;PEND='';
+if(a=='tab')T[k]=v;
+else if(a=='rat')roll(AT[k],[S.attr[k]]);
+else if(a=='pav')S.pav=S.pav?0:1;
+else if(a=='tut')TU=0;
+else if(a=='tx'){TU=-1;S.tut=1}
+else if(a=='tn'){TU+=+v;if(TU>=TUT.length){TU=-1;S.tut=1}}
+else if(a=='adj')S[k][0]=cl(S[k][0]+ +v,S[k][1]);
+else if(a=='roll'){const s=S.sk[i];roll(s.n+(s.x?` (${s.x})`:''),[S.attr[s.a],st(s.d,R.ps)],s.ex)}
+else if(a=='pip')S.imp=S.imp>+v?+v:+v+1;
+else if(a=='imp1'){if(S.imp>0){S.imp--;R.ex=4}}
+else if(a=='add')S[k].push(NEW[k]());
+else if(a=='del'){if(was==k+i)S[k].splice(i,1);else PEND=k+i}
+else if(a=='bar')S.bars[i].c=cl(S.bars[i].c+ +v,S.bars[i].m);
+else if(a=='mun')S.it[i].mc=cl(S.it[i].mc+ +v,S.it[i].mm);
+else if(a=='atk'){const x=S.it[i];if(x.mm>0&&x.mc<1){fl('Sem munição!');render();return}const s=S.sk.find(s=>s.n==x.per);const l=roll('Ataque: '+(x.n||'Arma'),[S.attr[s.a],st(s.d,R.ps)],s.ex);if(x.mm>0)x.mc--;l.dn=Math.max(0,l.ra+(+x.bn||0));fl(lg(l))}
+else if(a=='clr')LOG=[];
+else if(a=='fi'){$('#fi').click();return}
+else if(a=='exp'){const l=document.createElement('a');l.href=URL.createObjectURL(new Blob([JSON.stringify(S)],{type:'application/json'}));l.download=(S.nome||'ficha')+'.json';l.click();return}
+else if(a=='rst'){if(was=='rst')S=init();else{PEND='rst';fl('Clique em “Nova ficha” de novo para apagar tudo.')}}
+save();render()});
+document.addEventListener('mousedown',e=>{if(e.target.closest('[data-a]'))e.preventDefault()});
+render();
+</script></body></html>
